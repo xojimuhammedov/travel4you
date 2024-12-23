@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 
 function Destination() {
   return (
-    <Box p={"36px 0"}>
+    <Box id="destination" p={"36px 0"}>
       <Box className="container">
         <Heading {...css.name}>The perfect tour</Heading>
         <Heading {...css.title}>Trending destinations</Heading>

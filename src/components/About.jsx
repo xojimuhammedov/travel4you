@@ -14,7 +14,7 @@ import AboutImageOne from "../assets/about-1.avif";
 
 function About() {
   return (
-    <Box p={"36px 0"}>
+    <Box id="about" p={"36px 0"}>
       <Box className="container">
         <Flex {...css.list}>
           <Box>

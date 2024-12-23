@@ -12,18 +12,18 @@ function Navbar() {
             <Image {...css.image} src={LogoIcon} alt="LogoIcon" />
           </Alink>
           <Flex alignItems={"center"} gap={"36px"}>
-            <Link {...css.link} href="/">
-              Home
-            </Link>
-            <Link {...css.link} href="/">
+            <Alink to="/">
+              <Text {...css.link}>Home</Text>
+            </Alink>
+            <Link {...css.link} href="about">
               About Us
             </Link>
-            <Link {...css.link} href="/">
+            <Link {...css.link} href="#destination">
               Destination
             </Link>
-            <Link {...css.link} href="/">
-              Blog
-            </Link>
+            <Alink to="/blog">
+              <Text {...css.link}>Blog</Text>
+            </Alink>
             <Alink to="/contact">
               <Text {...css.link}>Contact</Text>
             </Alink>
