@@ -1,6 +1,6 @@
-import { background, Box, Heading, Link, position } from "@chakra-ui/react";
+import { Box, Heading, Link } from "@chakra-ui/react";
 import React from "react";
-import HeaderBanner from "../assets/header-banner.avif";
+import HeaderBanner from "../assets/dubay.webp";
 
 function Header() {
   return (
@@ -27,7 +27,7 @@ const css = {
     position: "relative",
     height: {
       base: "80vh",
-      lg: "90vh",
+      lg: "100vh",
     },
   },
   title: {
@@ -47,13 +47,8 @@ const css = {
       base: "100%",
       lg: "750px",
     },
-    margin: "0 auto",
-    position: "absolute",
-    left: {
-      base: "0%",
-      lg: "25%",
-    },
-    top: "25%",
+    margin: "auto",
+    paddingTop: "150px",
   },
   button: {
     backgroundColor: "#27ac5e",
@@ -68,15 +63,7 @@ const css = {
     alignItems: "center",
     justifyContent: "center",
     transition: "0.3s",
-    position: "absolute",
-    top: {
-      base: "44%",
-      lg: "55%",
-    },
-    left: {
-      base: "27%",
-      lg: "43%",
-    },
+    margin: "15px auto",
     borderRadius: "20px",
 
     _hover: {
