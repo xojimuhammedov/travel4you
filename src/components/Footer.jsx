@@ -33,7 +33,7 @@ function Footer() {
       </Box>
       <Box bg={"#000"} p={"24px 0"}>
         <Box className="container">
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} gap={"24px"}>
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={"24px"}>
             <Flex align={"center"} direction={"column"}>
               <Heading {...css.name}>Phone</Heading>
               <Link {...css.links} target="_blank" href={"tel:+998335898888"}>
@@ -52,7 +52,7 @@ function Footer() {
                 {...css.links}
                 target="_blank"
                 href={"https://maps.app.goo.gl/SWr6Dqkd9X9S79iz6"}>
-                Uzb, Tashkent city, Mirabad district, Chimkent street 7
+                Uzbekistan, Tashkent city, Mirabad district, Chimkent street 7
               </Link>
             </Flex>
           </SimpleGrid>
@@ -70,10 +70,7 @@ function Footer() {
                   target="_blank">
                   <Image src={InstagramIcon} />
                 </Link>
-                <Link href="/">
-                  <Image src={TelegramIcon} />
-                </Link>
-                <Link href="/">
+                <Link href="https://t.me/Ramziddin_wrt" target="_blank">
                   <Image src={TelegramIcon} />
                 </Link>
               </Flex>

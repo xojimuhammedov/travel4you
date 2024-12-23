@@ -10,6 +10,7 @@ import ContactPage from "./pages/ContactPage";
 import Header from "./components/Header";
 import Statistic from "./components/Statistic";
 import BlogPage from "./pages/BlogPage";
+import TourPage from "./pages/TourPage";
 
 function App() {
   return (
@@ -31,6 +32,15 @@ function App() {
         />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route
+          path="/tour/:id"
+          element={
+            <>
+              <TourPage />
+              <Destination />
+            </>
+          }
+        />
       </Routes>
       <Footer />
     </>

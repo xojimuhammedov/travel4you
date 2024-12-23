@@ -5,12 +5,14 @@ import {
   Image,
   SimpleGrid,
   Text,
+  transition,
 } from "@chakra-ui/react";
 import React from "react";
 
 import DestinationOne from "../assets/destination-1.avif";
 import DestinationTwo from "../assets/destination-2.avif";
 import DestinationThree from "../assets/destination-3.avif";
+import { Link } from "react-router-dom";
 
 function Destination() {
   return (
@@ -29,7 +31,9 @@ function Destination() {
               The Kophi-Thailand Tour is a unique experience that combines the
               natural
             </Text>
-            <Button {...css.button}>Details</Button>
+            <Link to={"/tour/1"}>
+              <Button {...css.button}>Details</Button>
+            </Link>
           </Box>
           <Box {...css.item}>
             <Image src={DestinationTwo} {...css.image} />
@@ -38,7 +42,9 @@ function Destination() {
               Tour Bali is a captivating travel experience on the tropical
               island of Indonesia.
             </Text>
-            <Button {...css.button}>Details</Button>
+            <Link to={"/tour/1"}>
+              <Button {...css.button}>Details</Button>
+            </Link>
           </Box>
           <Box {...css.item}>
             <Image src={DestinationThree} {...css.image} />
@@ -47,7 +53,9 @@ function Destination() {
               Explore the renowned Piazza San Marco with its Basilica San Marco
               and iconic Bell
             </Text>
-            <Button {...css.button}>Details</Button>
+            <Link to={"/tour/1"}>
+              <Button {...css.button}>Details</Button>
+            </Link>
           </Box>
         </SimpleGrid>
       </Box>
@@ -116,5 +124,10 @@ const css = {
     lineHeight: "24px",
     fontWeight: "500",
     marginTop: "20px",
+    transition: "0.3s",
+
+    _hover: {
+      backgroundColor: "#219653",
+    },
   },
 };
