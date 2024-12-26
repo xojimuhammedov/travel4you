@@ -2,6 +2,7 @@ import { Box, Flex, Image, Link, Text } from "@chakra-ui/react";
 import React from "react";
 import LogoIcon from "../assets/logo.jpg";
 import { Link as Alink } from "react-router-dom";
+import NavbarMenu from "./NavbarMenu";
 
 function Navbar() {
   return (
@@ -15,7 +16,7 @@ function Navbar() {
             <Alink to="/">
               <Text {...css.link}>Home</Text>
             </Alink>
-            <Link {...css.link} href="about">
+            <Link {...css.link} href="#about">
               About Us
             </Link>
             <Link {...css.link} href="#destination">
@@ -27,6 +28,7 @@ function Navbar() {
             <Alink to="/contact">
               <Text {...css.link}>Contact</Text>
             </Alink>
+            <NavbarMenu />
           </Flex>
         </Flex>
       </Box>
@@ -51,7 +53,7 @@ const css = {
     transition: "0.3s",
     display: {
       base: "none",
-      lg: "block",
+      md: "block",
     },
 
     _hover: {

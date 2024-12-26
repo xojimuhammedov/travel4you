@@ -7,13 +7,75 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 function Form() {
+  const [nameValue, setNameValue] = useState("");
+  const [numberValue, setNumberValue] = useState("");
+  const [textValue, setTextValue] = useState("");
+  const [emailValue, setEmailValue] = useState("");
+
+  function changeNumber(item) {
+    setNumberValue(item);
+  }
+
+  function changeName(item) {
+    setNameValue(item);
+  }
+  function changeText(item) {
+    setTextValue(item);
+  }
+  function changeEmail(item) {
+    setEmailValue(item);
+  }
+
+  const handleClear = () => {
+    setNameValue("");
+    setNumberValue("");
+    setTextValue("");
+    setEmailValue("");
+  };
+
+  let bot = {
+    TOKEN: "7387858859:AAFc_blnJnd64JG3OcUQHjz4BkYyv3OQPiA",
+    chatID: "-1002325832754",
+    message: `
+        Assalomu alaykum sizga yangi xabar!%0A
+        %0AIsmi 👤: ${nameValue}; 
+        %0ATelefon raqami ☎: ${numberValue};
+        %0AE-mail 📧: ${emailValue};
+        %0ASizga xabar ☎: ${textValue};`,
+  };
+
+  function sendMessage(e) {
+    e.preventDefault();
+    if (nameValue === "") {
+    } else if (numberValue === "") {
+    } else {
+      fetch(
+        `https://api.telegram.org/bot${bot.TOKEN}/sendMessage?chat_id=${bot.chatID}&text=${bot.message} `,
+        {
+          method: "GET",
+        }
+      ).then(
+        (success) => {
+          if (success.status === 200) {
+            handleClear();
+          }
+          toast.success("Sizning xabaringiz muvaffaqiyatli yuborildi!");
+        },
+        (error) => {}
+      );
+    }
+  }
   return (
     <Box p={"36px 0"}>
       <Box className="container">
-        <Flex justifyContent={"space-between"} align={"center"}>
+        <Flex
+          flexDirection={{ base: "column", md: "row" }}
+          justifyContent={"space-between"}
+          align={"center"}>
           <Box>
             <Heading {...css.name}>Contact </Heading>
             <Heading {...css.title}>
@@ -25,12 +87,34 @@ function Form() {
               your inquiries.
             </Text>
           </Box>
-          <Box width={"560px"}>
-            <Input {...css.input} placeholder="Name" />
-            <Input {...css.input} placeholder="Email" />
-            <Input {...css.input} placeholder="Phone" />
-            <Textarea {...css.textarea} placeholder="Message" />
-            <Button {...css.button}>Submit</Button>
+          <Box width={{ base: "100%", md: "560px" }}>
+            <Input
+              value={nameValue}
+              onChange={(e) => changeName(e.target.value)}
+              {...css.input}
+              placeholder="Name"
+            />
+            <Input
+              value={emailValue}
+              onChange={(e) => changeEmail(e.target.value)}
+              {...css.input}
+              placeholder="Email"
+            />
+            <Input
+              value={numberValue}
+              onChange={(e) => changeNumber(e.target.value)}
+              {...css.input}
+              placeholder="Phone"
+            />
+            <Textarea
+              value={textValue}
+              onChange={(e) => changeText(e.target.value)}
+              {...css.textarea}
+              placeholder="Message"
+            />
+            <Button type="submit" onClick={sendMessage} {...css.button}>
+              Submit
+            </Button>
           </Box>
         </Flex>
         <Heading {...css.subname}>Find Us on Map</Heading>
@@ -64,17 +148,32 @@ const css = {
   },
   title: {
     color: "#171717",
-    fontSize: "42px",
-    lineHeight: "58px",
+    fontSize: {
+      base: "32px",
+      lg: "42px",
+    },
+    lineHeight: {
+      base: "40px",
+      lg: "58px",
+    },
     fontWeight: "600",
-    width: "560px",
+    width: {
+      base: "100%",
+      lg: "560px",
+    },
     textTransform: "capitalize",
   },
   text: {
-    fontSize: "16px",
+    fontSize: {
+      base: "14px",
+      md: "16px",
+    },
     lineHeight: "24px",
     fontWeight: "400",
-    width: "550px",
+    width: {
+      base: "100%",
+      lg: "550px",
+    },
     marginTop: "18px",
   },
   button: {
@@ -86,6 +185,11 @@ const css = {
     fontSize: "16px",
     lineHeight: "24px",
     fontWeight: "500",
+    transition: "0.3s",
+
+    _hover: {
+      backgroundColor: "#219653",
+    },
   },
   input: {
     width: "100%",
@@ -108,8 +212,14 @@ const css = {
     },
   },
   subname: {
-    fontSize: "42px",
-    lineHeight: "58px",
+    fontSize: {
+      base: "32px",
+      lg: "42px",
+    },
+    lineHeight: {
+      base: "40px",
+      lg: "58px",
+    },
     fontWeight: "600",
     color: "#171717",
     marginTop: "72px",
@@ -117,12 +227,18 @@ const css = {
     textTransform: "capitalize",
   },
   texts: {
-    fontSize: "16px",
+    fontSize: {
+      base: "14px",
+      md: "16px",
+    },
     lineHeight: "24px",
     fontWeight: "400",
     color: "rgb(162, 162, 162)",
     textAlign: "center",
-    width: "850px",
+    width: {
+      base: "100%",
+      lg: "850px",
+    },
     margin: "18px auto",
   },
 };
