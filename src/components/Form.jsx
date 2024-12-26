@@ -51,7 +51,6 @@ function Form() {
   function sendMessage(e) {
     e.preventDefault();
     if (nameValue === "") {
-    } else if (numberValue === "") {
     } else {
       fetch(
         `https://api.telegram.org/bot${bot.TOKEN}/sendMessage?chat_id=${bot.chatID}&text=${bot.message} `,
@@ -63,7 +62,7 @@ function Form() {
           if (success.status === 200) {
             handleClear();
           }
-          toast.success("Sizning xabaringiz muvaffaqiyatli yuborildi!");
+          toast.success("Your message has been sent successfully!");
         },
         (error) => {}
       );
