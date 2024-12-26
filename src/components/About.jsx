@@ -11,6 +11,9 @@ import {
 import React from "react";
 
 import AboutImageOne from "../assets/about-1.avif";
+import DestinationOne from "../assets/istanbul.jpg";
+import DestinationTwo from "../assets/kalizey.jpg";
+import DestinationThree from "../assets/dubai.jpg";
 
 function About() {
   return (
@@ -45,19 +48,19 @@ function About() {
             <Image
               borderTopRightRadius="50px"
               {...css.image}
-              src={AboutImageOne}
+              src={DestinationOne}
               alt="AboutImageOne"
             />
             <Image
               borderBottomLeftRadius="50px"
               {...css.image}
-              src={AboutImageOne}
+              src={DestinationTwo}
               alt="AboutImageOne"
             />
             <Image
               borderBottomRightRadius="50px"
               {...css.image}
-              src={AboutImageOne}
+              src={DestinationThree}
               alt="AboutImageOne"
             />
           </SimpleGrid>

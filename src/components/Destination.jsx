@@ -5,13 +5,12 @@ import {
   Image,
   SimpleGrid,
   Text,
-  transition,
 } from "@chakra-ui/react";
 import React from "react";
 
-import DestinationOne from "../assets/destination-1.avif";
-import DestinationTwo from "../assets/destination-2.avif";
-import DestinationThree from "../assets/destination-3.avif";
+import DestinationOne from "../assets/istanbul.jpg";
+import DestinationTwo from "../assets/kalizey.jpg";
+import DestinationThree from "../assets/dubai.jpg";
 import { Link } from "react-router-dom";
 
 function Destination() {
@@ -26,10 +25,10 @@ function Destination() {
           columns={{ base: 1, sm: 2, lg: 3 }}>
           <Box {...css.item}>
             <Image src={DestinationOne} {...css.image} />
-            <Heading {...css.subname}>Cappadocia-Turky</Heading>
+            <Heading {...css.subname}>Discover the Magic of Istanbul</Heading>
             <Text {...css.text}>
-              The Kophi-Thailand Tour is a unique experience that combines the
-              natural
+              Istanbul, the enchanting city straddling two continents, offers an
+              unparalleled blend of history, culture, and modernity.
             </Text>
             <Link to={"/tour/1"}>
               <Button {...css.button}>Details</Button>
@@ -37,23 +36,23 @@ function Destination() {
           </Box>
           <Box {...css.item}>
             <Image src={DestinationTwo} {...css.image} />
-            <Heading {...css.subname}>Bali, Indonesia</Heading>
+            <Heading {...css.subname}>Explore the Charm of Italy</Heading>
             <Text {...css.text}>
-              Tour Bali is a captivating travel experience on the tropical
-              island of Indonesia.
+              Italy is a country that needs no introduction. Known for its
+              breathtaking landscapes, rich history.
             </Text>
-            <Link to={"/tour/1"}>
+            <Link to={"/tour/2"}>
               <Button {...css.button}>Details</Button>
             </Link>
           </Box>
           <Box {...css.item}>
             <Image src={DestinationThree} {...css.image} />
-            <Heading {...css.subname}>Venezia, Italy</Heading>
+            <Heading {...css.subname}>Discover the Futuristic of Dubai</Heading>
             <Text {...css.text}>
-              Explore the renowned Piazza San Marco with its Basilica San Marco
-              and iconic Bell
+              Dubai is a city like no other, where modernity and tradition blend
+              seamlessly. Known for its striking skyscrapers.
             </Text>
-            <Link to={"/tour/1"}>
+            <Link to={"/tour/3"}>
               <Button {...css.button}>Details</Button>
             </Link>
           </Box>
@@ -113,6 +112,9 @@ const css = {
   },
   image: {
     borderRadius: "8px 8px 0 0",
+    objectFit: "cover",
+    width: "100%",
+    height: "260px",
   },
   button: {
     backgroundColor: "#27ac5e",

@@ -11,14 +11,13 @@ import NewsOne from "../assets/news-1.avif";
 import NewsTwo from "../assets/news-2.avif";
 import NewsThree from "../assets/news-3.avif";
 import NewsFour from "../assets/news-4.avif";
-import { object } from "framer-motion/client";
 
 function News() {
   return (
-    <Box p={"36px 0"}>
+    <Box id="blog" p={"36px 0"}>
       <Box className="container">
         <Heading {...css.name}>true roming tales</Heading>
-        <Heading {...css.title}>letest useful news</Heading>
+        <Heading {...css.title}>letest useful blogs</Heading>
         <SimpleGrid
           mt={"36px"}
           gap={"24px"}
@@ -77,7 +76,7 @@ const css = {
     lineHeight: {
       base: "40px",
       lg: "58px",
-    },  
+    },
     fontWeight: "600",
     textAlign: "center",
     textTransform: "capitalize",

@@ -21,9 +21,9 @@ function Navbar() {
             <Link {...css.link} href="#destination">
               Destination
             </Link>
-            <Alink to="/blog">
-              <Text {...css.link}>Blog</Text>
-            </Alink>
+            <Link href="#blog" {...css.link}>
+              Blog
+            </Link>
             <Alink to="/contact">
               <Text {...css.link}>Contact</Text>
             </Alink>
