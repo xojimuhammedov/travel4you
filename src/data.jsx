@@ -33,3 +33,5 @@ Come and immerse yourself in the glamour, innovation, and endless possibilities 
     image: DestinationThree,
   },
 ];
+
+export const BASE_URL = "https://test.al-muamalat.uz/files/";

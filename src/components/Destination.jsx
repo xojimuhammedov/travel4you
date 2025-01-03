@@ -6,14 +6,25 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import DestinationOne from "../assets/istanbul.jpg";
 import DestinationTwo from "../assets/kalizey.jpg";
 import DestinationThree from "../assets/dubai.jpg";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { BASE_URL } from "../data";
 
 function Destination() {
+  const [destination, setDestination] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://test.al-muamalat.uz/api/destination")
+      .then((res) => setDestination(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <Box id="destination" p={"36px 0"}>
       <Box className="container">
@@ -23,39 +34,28 @@ function Destination() {
           mt={"48px"}
           gap={"24px"}
           columns={{ base: 1, sm: 2, lg: 3 }}>
-          <Box {...css.item}>
-            <Image src={DestinationOne} {...css.image} />
-            <Heading {...css.subname}>Discover the Magic of Istanbul</Heading>
-            <Text {...css.text}>
-              Istanbul, the enchanting city straddling two continents, offers an
-              unparalleled blend of history, culture, and modernity.
-            </Text>
-            <Link to={"/tour/1"}>
-              <Button {...css.button}>Details</Button>
-            </Link>
-          </Box>
-          <Box {...css.item}>
-            <Image src={DestinationTwo} {...css.image} />
-            <Heading {...css.subname}>Explore the Charm of Italy</Heading>
-            <Text {...css.text}>
-              Italy is a country that needs no introduction. Known for its
-              breathtaking landscapes, rich history.
-            </Text>
-            <Link to={"/tour/2"}>
-              <Button {...css.button}>Details</Button>
-            </Link>
-          </Box>
-          <Box {...css.item}>
-            <Image src={DestinationThree} {...css.image} />
-            <Heading {...css.subname}>Discover the Futuristic of Dubai</Heading>
-            <Text {...css.text}>
-              Dubai is a city like no other, where modernity and tradition blend
-              seamlessly. Known for its striking skyscrapers.
-            </Text>
-            <Link to={"/tour/3"}>
-              <Button {...css.button}>Details</Button>
-            </Link>
-          </Box>
+          {destination?.data?.map((item, index) => (
+            <Box key={index} {...css.item}>
+              <Image
+                src={`${BASE_URL}/${item?.images?.[0]?.url?.replace(
+                  "uploads/",
+                  ""
+                )}`}
+                {...css.image}
+              />
+              <Heading {...css.subname}>{item?.title}</Heading>
+              <Text
+                {...css.text}
+                dangerouslySetInnerHTML={{
+                  __html: item?.description?.slice(0, 95),
+                }}
+              />
+
+              <Link to={`/tour/${item?.id}`}>
+                <Button {...css.button}>Details</Button>
+              </Link>
+            </Box>
+          ))}
         </SimpleGrid>
       </Box>
     </Box>
