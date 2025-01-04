@@ -48,7 +48,9 @@ function Destination() {
                 }}
               />
 
-              <Link to={`/tour/${item?.id}`}>
+              <Link
+                onClick={() => window.scrollTo(0, 0)}
+                to={`/tour/${item?.id}`}>
                 <Button {...css.button}>Details</Button>
               </Link>
             </Box>

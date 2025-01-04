@@ -43,7 +43,7 @@ export default TourPage;
 const css = {
   image: {
     w: "100%",
-    h: "650px",
+    h: "700px",
     borderRadius: "8px",
     objectFit: "cover",
   },
