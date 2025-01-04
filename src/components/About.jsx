@@ -14,6 +14,7 @@ import AboutImageOne from "../assets/about-1.avif";
 import DestinationOne from "../assets/istanbul.jpg";
 import DestinationTwo from "../assets/kalizey.jpg";
 import DestinationThree from "../assets/dubai.jpg";
+import BlogOne from "../assets/blog-1.avif";
 
 function About() {
   return (
@@ -42,7 +43,7 @@ function About() {
             <Image
               borderTopLeftRadius="50px"
               {...css.image}
-              src={AboutImageOne}
+              src={BlogOne}
               alt="AboutImageOne"
             />
             <Image

@@ -1,8 +1,7 @@
 import { Box, Heading, Image, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import TourImage from "../assets/tour-image.avif";
 import { useParams } from "react-router-dom";
-import { BASE_URL, destinationData } from "../data";
+import { BASE_URL } from "../data";
 import axios from "axios";
 
 function TourPage() {

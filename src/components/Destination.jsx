@@ -8,9 +8,6 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 
-import DestinationOne from "../assets/istanbul.jpg";
-import DestinationTwo from "../assets/kalizey.jpg";
-import DestinationThree from "../assets/dubai.jpg";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../data";

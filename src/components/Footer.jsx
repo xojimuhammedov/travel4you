@@ -11,6 +11,7 @@ import React from "react";
 import FooterBanner from "../assets/footer-banner.avif";
 import TelegramIcon from "../assets/tg.svg";
 import InstagramIcon from "../assets/instagram.svg";
+import WhatsappIcon from "../assets/whatsapp.png";
 
 function Footer() {
   return (
@@ -72,6 +73,9 @@ function Footer() {
                 </Link>
                 <Link href="https://t.me/Ramziddin_wrt" target="_blank">
                   <Image src={TelegramIcon} />
+                </Link>
+                <Link href="/" target="_blank">
+                  <Image w={'25px'} src={WhatsappIcon} />
                 </Link>
               </Flex>
             </Flex>
