@@ -11,6 +11,7 @@ import Header from "./components/Header";
 import Statistic from "./components/Statistic";
 import BlogPage from "./pages/BlogPage";
 import TourPage from "./pages/TourPage";
+import DestinationPage from "./pages/Destination";
 
 function App() {
   return (
@@ -31,9 +32,9 @@ function App() {
           }
         />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/blog" element={<BlogPage />} />
+        {/* <Route path="/blog" element={<BlogPage />} /> */}
         <Route
-          path="/tour/:id"
+          path="/destination/:id"
           element={
             <>
               <TourPage />
@@ -41,7 +42,16 @@ function App() {
             </>
           }
         />
+        <Route
+          path="/tour/:id"
+          element={
+            <>
+              <DestinationPage />
+            </>
+          }
+        />
       </Routes>
+      
       <Footer />
     </>
   );

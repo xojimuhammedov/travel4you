@@ -50,7 +50,7 @@ function Destination() {
 
               <Link
                 onClick={() => window.scrollTo(0, 0)}
-                to={`/tour/${item?.id}`}>
+                to={`/destination/${item?.id}`}>
                 <Button {...css.button}>Details</Button>
               </Link>
             </Box>

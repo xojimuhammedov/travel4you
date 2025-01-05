@@ -4,13 +4,13 @@ import { useParams } from "react-router-dom";
 import { BASE_URL } from "../data";
 import axios from "axios";
 
-function TourPage() {
+function DestinationPage() {
   const { id } = useParams();
   const [destination, setDestination] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`https://test.al-muamalat.uz/api/destination`)
+      .get(`https://test.al-muamalat.uz/api/tour`)
       .then((res) =>
         setDestination(res.data.data.find((item) => item?.id === id))
       )
@@ -38,7 +38,7 @@ function TourPage() {
   );
 }
 
-export default TourPage;
+export default DestinationPage;
 
 const css = {
   image: {
