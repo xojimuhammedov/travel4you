@@ -53,7 +53,7 @@ function Footer() {
                 {...css.links}
                 target="_blank"
                 href={"https://maps.app.goo.gl/SWr6Dqkd9X9S79iz6"}>
-                Uzbekistan, Tashkent city, Mirabad district, Chimkent street 7
+                Uzbekistan, Tashkent city
               </Link>
             </Flex>
           </SimpleGrid>
